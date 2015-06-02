@@ -1,5 +1,7 @@
 # Informative git prompt for bash and fish
 
+I copied this for my own personal use from [here](https://github.com/magicmonty/bash-git-prompt)
+
 This prompt is a port of the "Informative git prompt for zsh" which you can
 find [here](https://github.com/olivierverdier/zsh-git-prompt)
 
@@ -283,28 +285,3 @@ rpmbuild -ta bash-git-prompt-xxx.tar.gz
 ````
 Then you may publish or install the rpm from "~/rpmbuild/RPMS/noarch".
 
-## License
-This code is under the [BSD 2 Clause (NetBSD) license][license].
-
-## Who Are You?
-The current maintainer of the original bash-git-prompt is [Martin Gondermann][magicmonty].
-
-## Contributing
-If you want to contribute you can look for issues with the label [up-for-grabs][upforgrabs].
-Please leave a comment on the issue, that you want to fix it, so others know, the labels are "taken".
-
-Pull requests are welcome. I will check them and merge them, if I think they help the project.
-
-## Donations
-I accept tips through [Gittip][tip] and [Flattr][flattr].
-
-[![Gittip](https://img.shields.io/gittip/magicmonty.svg?style=flat)](https://www.gittip.com/magicmonty/)
-[![Flattr](http://api.flattr.com/button/flattr-badge-large.png)](https://flattr.com/submit/auto?user_id=magicmonty&url=https%3A%2F%2Fgithub.com%2Fmagicmonty%2Fbash-git-prompt)
-
-[blog post]: http://sebastiancelis.com/2009/nov/16/zsh-prompt-git-users/
-[tip]:https://www.gittip.com/magicmonty/
-[magicmonty]: http://blog.pagansoft.de/pages/about.html
-[license]:https://github.com/magicmonty/bash-git-prompt/tree/master/LICENSE.txt
-[flattr]: https://flattr.com/submit/auto?user_id=magicmonty&url=https%3A%2F%2Fgithub.com%2Fmagicmonty%2Fbash-git-prompt
-[homebrew]: http://brew.sh/
-[upforgrabs]: https://github.com/magicmonty/bash-git-prompt/labels/up-for-grabs
