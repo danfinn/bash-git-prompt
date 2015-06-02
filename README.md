@@ -81,28 +81,13 @@ The symbols are as follows:
 
 ## Installation
 
-### via [Homebrew][homebrew] on Mac OS X
-
-- Run `brew update`
-
-- Run `brew install bash-git-prompt` for the last stable release or `brew install --HEAD bash-git-prompt` for the 
-   latest version directly from the repository
-
-- Now you can source the file in your `~/.bashrc` as follows:
-
-```sh
-if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then
-    source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh"
-fi
-```
-
 ### via Git clone
 
 - Clone this repository to your home directory.
 
 ```sh
 cd ~
-git clone https://github.com/magicmonty/bash-git-prompt.git .bash-git-prompt
+git clone https://github.com/danfinn/bash-git-prompt.git .bash-git-prompt
 ```
 
 - Source the file `gitprompt.sh` from `~/.bashrc`
@@ -237,51 +222,3 @@ git_prompt_reset
 ```
 
 **Enjoy!**
-
-## Alternative RPM Install
-
-This project ships an RPM spec to simplify installation on RHEL and
-clones. If you wish to install from RPM, you may first build the RPM
-from scratch by following this procedure:
-* Clone this repository and tag the release with a version number
-
-````sh
-    git tag -a -m "Tag release 1.1" 1.1
-````
-
-* Run the following command to create a tarball:
-
-````sh
-    VER=$(git describe)
-    # replace dash with underscore to work around
-    # rpmbuild does not allow dash in version string
-    VER=${VER//\-/_}
-    git archive                                \
-        --format tar                           \
-        --prefix=bash-git-prompt-${VER}/       \
-        HEAD                                   \
-        --  *.sh                               \
-            *.fish                             \
-            README.md                          \
-            themes                             \
-      > bash-git-prompt-${VER}.tar
-    mkdir -p /tmp/bash-git-prompt-${VER}
-    sed "s/Version:.*/Version:        ${VER}/"          \
-        bash-git-prompt.spec                            \
-      > /tmp/bash-git-prompt-${VER}/bash-git-prompt.spec
-    OLDDIR=$(pwd)
-    cd /tmp
-    tar -uf ${OLDDIR}/bash-git-prompt-${VER}.tar      \
-            bash-git-prompt-${VER}/bash-git-prompt.spec
-    cd ${OLDDIR}
-    gzip bash-git-prompt-${VER}.tar
-    mv bash-git-prompt-${VER}.tar.gz bash-git-prompt-${VER}.tgz
-````
-
-* Log into an RHEL or clones host and run:
-
-````sh
-rpmbuild -ta bash-git-prompt-xxx.tar.gz
-````
-Then you may publish or install the rpm from "~/rpmbuild/RPMS/noarch".
-
